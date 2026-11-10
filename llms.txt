@@ -1,13 +1,14 @@
 # Isotuiles
 
-> Isotuiles est une boutique en ligne française spécialisée dans la vente de panneaux sandwich isolants pour toiture — imitation tuiles et bac acier — avec livraison partout en France. Vente directe d'usine, découpe sur mesure, et prix dégressifs selon les quantités.
+> Isotuiles est une boutique en ligne française spécialisée dans la vente de panneaux sandwich isolants pour toiture — imitation tuiles (Romane Canal, Tuiles Plates) et bac acier — ainsi que de panneaux de bardage et de tous les accessoires de pose. Vente directe d'usine, découpe sur mesure, prix dégressifs selon les quantités et livraison partout en France.
 
-Site web : https://isotuiles.fr  
-Localisation : Zone d'Activité de Gemeillan, 33480 Sainte-Hélène, France  
-Téléphone commercial : +33 6 76 45 67 57  
-Téléphone logistique : +33 7 83 43 03 98  
-Email : isotuiles@gmail.com / service.client.isotuiles@gmail.com  
+Site web : https://isotuiles.fr
+Localisation : Zone d'Activité de Gemeillan, 33480 Sainte-Hélène (Gironde), France
+Téléphone commercial : +33 6 76 45 67 57
+Téléphone logistique : +33 7 83 43 03 98
+Email : isotuiles@gmail.com / service.client.isotuiles@gmail.com
 Horaires : Lundi–Vendredi 8h–19h, Samedi 9h–17h
+Devis gratuit en ligne : https://isotuiles.fr/pages/devis-isotuiles
 
 
 ## À propos d'Isotuiles
@@ -16,90 +17,192 @@ Isotuiles est un vendeur direct d'usine proposant des panneaux sandwich isolants
 
 - **30 % moins cher** qu'une rénovation de toiture classique à performance équivalente
 - **Installation 2× plus rapide** grâce à la pose directe sur la charpente existante, sans démolition
-- **Découpe sur mesure** aux dimensions exactes du chantier (multiples de 35 cm, de 2,10 m à 12,25 m en standard ; jusqu'à 15,75 m sur demande)
-- **Livraison partout en France**
-- **Âme en mousse polyuréthane haute densité** pour une isolation thermique et phonique supérieure
+- **Couverture et isolation en une seule pose** : le panneau est à la fois la couverture, l'isolant et le plafond fini
+- **Découpe sur mesure** aux dimensions exactes du chantier (de 2,10 m à 12,25 m par pas de 35 cm en commande en ligne ; jusqu'à 14,00 m sur devis)
+- **Livraison partout en France** et dans les pays limitrophes, ou retrait au dépôt sur rendez-vous
+- **Âme en mousse polyuréthane haute densité** (λ = 0,022 W/m.K) pour une isolation thermique et phonique supérieure
 - **Rendu esthétique** de tuile traditionnelle, intégré à tout type d'architecture
+- **Particuliers et professionnels** : espace dédié aux pros et réseau de poseurs partenaires
 
 
 ## Gamme de produits
 
 ### Panneaux sandwich imitation tuiles — Romane Canal
 Panneaux à profil arrondi rappelant la tuile romane ou canal.
-- Couleurs disponibles : Pastel Vieillie, Rouge Vieillie, Gris Anthracite, Terracotta
-- Prix : à partir de 93,45 €/m²
-- Délai de fabrication : 5 à 6 semaines
-- URL : https://isotuiles.fr/collections/romane-canal
+- Épaisseurs d'isolant : 40/80 mm ou 60/105 mm (creux d'onde / sommet d'onde)
+- Prix : de 44,50 €/m² à 48,50 €/m² selon la couleur et l'épaisseur (Gris Anthracite et Terracotta : 44,50 €/m² en 40/80, 47,00 €/m² en 60/105 ; Pastel Vieillie, Rouge Vieillie et Rose Méridionale : 46,00 €/m² en 40/80, 48,50 €/m² en 60/105)
+- Délai de fabrication : 5 à 6 semaines (délai réduit possible au-delà de 300 m²)
+- Collection : https://isotuiles.fr/collections/romane-canal
+- Couleurs et fiches produit :
+  - [Romane Canal — Gris Anthracite](https://isotuiles.fr/products/romane-canal-gris-anthracite)
+  - [Romane Canal — Terracotta](https://isotuiles.fr/products/romane-canal-terracotta)
+  - [Romane Canal — Rouge Vieillie](https://isotuiles.fr/products/romane-canal-rouge-vieillie)
+  - [Romane Canal — Pastel Vieillie](https://isotuiles.fr/products/romane-canal-pastel-vieillie)
+  - [Romane Canal — Rose Méridionale](https://isotuiles.fr/products/romane-canal-rose-meridionale)
+- Accessoires assortis : https://isotuiles.fr/collections/accessoires-romane-canal
 
 ### Panneaux sandwich imitation tuiles — Tuiles Plates
-Panneaux à profil plat pour un rendu ardoise ou tuile plate.
-- Couleurs disponibles : Terracotta, Gris Terre d'Ombre (RAL 7022), Gris Anthracite (RAL 7016)
+Panneaux à profil plat pour un rendu ardoise ou tuile plate, adaptés aux habitations, extensions et bâtiments soumis à des contraintes architecturales.
+- Épaisseur d'isolant : 50/77 mm (creux / sommet)
 - Prix : 54,00 €/m²
-- Délai de fabrication : 6 à 8 semaines
-- URL : https://isotuiles.fr/collections/tuiles-plates / https://isotuiles.fr/collections/panneaux-tuiles-plates
+- Délai de fabrication : 6 à 8 semaines (délai réduit possible au-delà de 300 m²)
+- Collection : https://isotuiles.fr/collections/tuiles-plates
+- Couleurs et fiches produit :
+  - [Tuiles Plates — Terracotta](https://isotuiles.fr/products/tuiles-plates-terracotta)
+  - [Tuiles Plates — Gris Anthracite (RAL 7016)](https://isotuiles.fr/products/tuiles-plates-gris-anthracite-ral-7016)
+  - [Tuiles Plates — Gris Ardoise (RAL 7022, gris terre d'ombre)](https://isotuiles.fr/products/tuiles-plates-gris-terre-d-ombre-ral-7022)
+- Accessoires assortis : https://isotuiles.fr/collections/accessoires-tuiles-plates
 
-### Panneaux Bac Acier
+### Panneaux sandwich Bac Acier
 Panneaux sandwich à profil trapézoïdal, adaptés aux toitures industrielles et agricoles.
-- Prix : à partir de 26,00 €/m²
+- Épaisseurs d'isolant : 20, 30, 40, 50, 60, 80, 100, 120 ou 150 mm
+- Prix : de 26,00 €/m² (20 mm) à 38,90 €/m² selon l'épaisseur
+- 15 couleurs : Blanc RAL 9010, Métal argenté RAL 9006, Métal gris RAL 9007, Gris perle RAL 7038, Gris basalte RAL 7012, Gris anthracite RAL 7016, Gris foncé RAL 7022, Noir profond RAL 9005, Tuile rouge RAL 8004, Rouge foncé RAL 3009, Rouge feu RAL 3000, Crème RAL 1015, Jaune zinc RAL 1018, Bleu gentiane RAL 5010, Vert foncé RAL 6005
 - Délai de fabrication : 5 à 8 semaines
-- URL : https://isotuiles.fr/collections/bac-acier
+- Fiche produit : https://isotuiles.fr/products/bac-acier
+- Collection : https://isotuiles.fr/collections/bac-acier
+- Accessoires assortis : https://isotuiles.fr/collections/accessoires-bac-acier
+- Plaque éclairante : [Bac translucide en polycarbonate](https://isotuiles.fr/products/bac-translucide) — 16,00 €
 
-### Accessoires de pose
-Tous les éléments de finition pour une installation complète et étanche :
-- Faîtage : 22,00 €
-- Faîtage contre mur : à partir de 37,00 €
-- Faîtage de fermeture : à partir de 37,00 €
-- Rive Latérale U : à partir de 35,70 €
-- Cache mousse (ép. 40/80 mm) : 12,50 €
-- Profilés métalliques Omega : 28,00 €
-- Vis acier (125 mm) : 52,80 € la boîte
-- Vis bois (150 mm) : 55,20 € la boîte
-- URL : https://isotuiles.fr/collections/accessoires
+### Panneaux de bardage
+Panneaux sandwich de façade à âme polyuréthane (PUR/PIR) et fixations occultes (FO), sans vis apparentes, largeur utile 1 000 mm, pour bâtiments tertiaires et industriels (versions FRIGO pour les locaux froids).
+- [ISOPANEL Micro-FO](https://isotuiles.fr/products/isopanel-isopanlmicro-fo) — parement micro-nervuré — 39,00 €
+- [ISOPANEL NERV-FO](https://isotuiles.fr/products/isopanel-nerv-fo) — parement nervuré — 39,00 €
+- [ISOPANEL FRIGO-FO](https://isotuiles.fr/products/isopanel-micro-fo-copie) — version froid — 44,00 €
+- [ISOPANEL FRIGONERV-FO](https://isotuiles.fr/products/isopanel-frigo-fo-copie) — version froid nervurée — 44,00 €
+- Collection : https://isotuiles.fr/collections/bardage
+
+### Accessoires de pose — Romane Canal et Tuiles Plates
+Disponibles dans les couleurs des panneaux (Gris Ardoise, Pastel Vieillie, Terracotta, Rouge Vieillie, Gris Anthracite, Rose Méridionale).
+- [Faîtage double pente](https://isotuiles.fr/products/faitage-double-pente) — 22,00 € le mètre
+- [Faîtage contre mur](https://isotuiles.fr/products/faitage-contre-mur) — de 37,00 € à 74,00 € (longueurs 2 à 4 m)
+- [Faîtage de fermeture](https://isotuiles.fr/products/faitage-de-fermeture) — de 37,00 € à 74,00 € (longueurs 2 à 4 m)
+- [Rive Latérale U](https://isotuiles.fr/products/rive-laterale-u) — de 35,70 € à 65,45 € (longueurs 2,10 à 3,85 m)
+- [Rive Latérale L](https://isotuiles.fr/products/rive-laterale-l) — de 35,28 € à 64,68 € (longueurs 2,10 à 3,85 m)
+- [Cache mousse ép. 40/80 mm](https://isotuiles.fr/products/cache-mousse-ep-40-80-mm) — 12,50 € le mètre
+- [Cache mousse ép. 60/105 mm](https://isotuiles.fr/products/cache-mousse-ep-60-100-mm) — 13,00 € le mètre
+- [Vis 125 mm pour panneaux 40/80](https://isotuiles.fr/products/vis-125mm) — 52,80 € le paquet de 100 (version bois ou acier, tête colorée)
+- [Vis 150 mm pour panneaux 60/105](https://isotuiles.fr/products/vis-150mm) — 55,20 € le paquet de 100 (version bois ou acier, tête colorée)
+- [Profilés métalliques Omega](https://isotuiles.fr/products/profiles-metalliques-omega) — 28,00 €
+
+### Accessoires de pose — Bac Acier
+Disponibles dans les 15 couleurs RAL du bac acier.
+- [Faîtière double crantée](https://isotuiles.fr/products/faitiere-double-crantee-bac-acier) — 21,40 €
+- [Faîtière double 90°](https://isotuiles.fr/products/faitiere-double-90deg) — 16,30 €
+- [Faîtière double 120°](https://isotuiles.fr/products/faitiere-double-120deg) — 16,30 €
+- [Faîtière de fermeture crantée](https://isotuiles.fr/products/faitiere-de-fermeture-crantee) — 17,50 €
+- [Faîtière contre mur crantée](https://isotuiles.fr/products/faitiere-contre-mur-crantee) — 17,50 €
+- [Rive contre mur](https://isotuiles.fr/products/rive-contre-mur-bac-acier) — 16,30 €
+- [Rive contre mur profilée](https://isotuiles.fr/products/rive-contre-mur-profilee-bac-acier) — 17,40 €
+- [Rive latérale](https://isotuiles.fr/products/rive-laterale) — de 35,70 € à 65,45 € (longueurs 2,10 à 3,85 m)
+- [Cache mousse Bac Acier](https://isotuiles.fr/products/cache-mousse-bac-acier) — 10,80 € (30 à 100 mm)
+- [Vis bac acier](https://isotuiles.fr/products/vis-bac-acier) — 44,00 € (version bois ou acier)
+- [Vis de couture](https://isotuiles.fr/products/vis-de-couture) — 32,00 €
+
+### Collections d'accessoires
+- Tous les accessoires : https://isotuiles.fr/collections/accessoires
+- Faîtages : https://isotuiles.fr/collections/faitage
+- Rives : https://isotuiles.fr/collections/rives
+- Caches mousse : https://isotuiles.fr/collections/cache-mousse
+- Fixations : https://isotuiles.fr/collections/fixation
+- Profils métalliques : https://isotuiles.fr/collections/profils-metalliques
 
 
 ## Caractéristiques techniques
 
-- **Structure du panneau** : double parement métallique + âme en mousse polyuréthane rigide haute densité
-- **Isolation thermique** : réduit jusqu'à 30 % des pertes de chaleur par la toiture ; élimine les ponts thermiques
+### Caractéristiques communes (panneaux imitation tuiles)
+
+- **Composition** : parement extérieur en acier galvanisé laqué (0,60 mm) / âme en mousse polyuréthane rigide haute densité / parement intérieur en acier ; parement intérieur en aluminium laqué possible sur demande
+- **Conductivité de l'isolant** : λ = 0,022 W/m.K
+- **Largeur utile** : 1 000 mm (pas d'onde de 200 mm, hauteur d'onde 45 mm)
+- **Longueurs** : de 2,10 m à 12,25 m par pas de 35 cm en commande en ligne (le pas correspond au module d'une tuile) ; jusqu'à 14,00 m sur devis
+- **Poids** : environ 12 kg/m²
+- **Réaction au feu** : B-s2,d0
+- **Finition intérieure** : blanc laqué avec légère nervure par défaut (personnalisation possible sur commande importante : bois clair, bois foncé, autres couleurs)
+- **Emboîtement latéral** : système mâle/femelle avec recouvrement de 8 cm
+- **Durabilité** : acier galvanisé laqué résistant à la corrosion et aux agents fongicides, entretien minimal
 - **Isolation phonique** : atténuation sonore renforcée (pluie, circulation, bruit extérieur)
-- **Finition intérieure** : blanc laqué par défaut (personnalisation possible sur commande importante : bois clair, bois foncé, autres couleurs)
-- **Pente minimale recommandée** : 10 % pour une bonne évacuation des eaux de pluie
-- **Entraxe des pannes** : 2,00 m à 2,50 m recommandé (réduire pour des portées supérieures)
+- **Économie de charpente** : panneaux autoportants nécessitant moins de supports qu'une couverture traditionnelle
+
+### Performances thermiques
+
+| Modèle | Épaisseur d'isolant | Résistance thermique R |
+|---|---|---|
+| Romane Canal | 40/80 mm | 2,73 m².K/W |
+| Romane Canal | 60/105 mm | 3,64 m².K/W |
+| Tuiles Plates | 50/77 mm | 3,12 m².K/W |
+
+Valeurs calculées sur l'épaisseur moyenne de mousse avec λ = 0,022 W/m.K. La toiture représente jusqu'à 30 % des pertes de chaleur d'un bâtiment ; l'isolant continu des panneaux limite les ponts thermiques.
+
+### Charge admissible selon l'entraxe des pannes (kg/m²)
+
+| Entraxe des appuis | 1,50 m | 1,75 m | 2,00 m | 2,25 m | 2,50 m |
+|---|---|---|---|---|---|
+| Romane Canal 40/80 mm | 280 | 225 | 185 | 150 | 105 |
+| Romane Canal 60/105 mm | 360 | 295 | 245 | 205 | 150 |
+| Tuiles Plates 50/77 mm | 310 | 245 | 210 | 175 | 135 |
+
+Valeurs indicatives du fabricant. En zone de forte neige ou de vent important, réduire l'entraxe pour rester au-dessus des charges réglementaires du site.
+
+### Mise en œuvre
+
+- **Pente minimale** : 10 % (environ 6°) pour une bonne évacuation des eaux de pluie
+- **Calcul de la pente** : pente (%) = hauteur ÷ longueur horizontale × 100 (exemple : 3 m de hauteur sur 10 m → 30 %)
+- **Longueur des panneaux** : mesurer le rampant (longueur inclinée, plus grande que la projection au sol) et ajouter un débord de 20 à 35 cm en bas de pente pour protéger les murs du ruissellement
+- **Entraxe des pannes** : 2,00 m à 2,50 m (se reporter au tableau de charges ci-dessus ; réduire l'entraxe pour des charges plus élevées)
+- **Support** : pose directe sur charpente bois ou métallique existante
+- **Fixation** : vis autoperceuses étanches à tête colorée posées en sommet d'onde, sur chaque panne ; vis de 125 mm pour les panneaux 40/80 et de 150 mm pour les panneaux 60/105, en version bois ou acier selon la charpente
+- **Ordre de pose** : aligner le premier panneau sur le bas de pente, visser à chaque extrémité sur chaque panne, emboîter le panneau suivant (mâle dans femelle) et visser la jonction ; répartir les autres vis régulièrement (jusqu'à 6 vis/m²) sans serrage excessif
+- **Finitions** : faîtage (avec mousse profilée d'étanchéité entre faîtage et panneaux), faîtage contre mur, faîtage de fermeture, rives latérales en L ou en U (débord de 5 à 10 cm), cache mousse en bas de pente pour masquer l'isolant
+- **Découpe** : scie sauteuse ou scie circulaire avec lame métal à dents fines, ou grignoteuse ; éviter la disqueuse à disque abrasif, dont les étincelles brûlantes abîment le prélaquage et l'isolant ; caler le panneau sur tréteaux, puis retirer immédiatement la limaille métallique pour éviter la rouille ; porter lunettes, gants et masque
 - **Compatibilité Velux** : oui, avec chevêtre dans la charpente et kit d'étanchéité fabricant
 - **Compatibilité panneaux solaires** : oui, installation possible sous réserve du respect des règles de mise en œuvre
-- **Fixation** : vis auto-perceuses sur la partie haute des ondes ; emboîtement mâle/femelle à fixer ; capuchons de finition recommandés
+- **Guide complet** : https://isotuiles.fr/pages/guide-de-pose
 
 
 ## Commande et livraison
 
-- **Comment commander** : via formulaire en ligne, par téléphone ou par email pour un devis personnalisé
+- **Comment commander** : directement en ligne sur la boutique, via le devis gratuit en ligne (https://isotuiles.fr/pages/devis-isotuiles), par téléphone ou par email
 - **Acompte** : 50 % à la commande pour lancer la fabrication
 - **Solde** : à régler avant livraison et déchargement
 - **Livraison** : partout en France et pays limitrophes, suivie à chaque étape (fabrication, départ transport, arrivée)
-- **Estimateur de prix en ligne** : simulateur gratuit sur https://isotuiles.fr/pages/estimateur-de-prix
+- **Suivi de commande** : https://isotuiles.fr/pages/suivi-commande
+- **Retrait au dépôt** : sur rendez-vous à Sainte-Hélène (https://isotuiles.fr/pages/rendez-vous-au-depot)
+- **Conditions générales de vente** : https://isotuiles.fr/pages/conditions-generales-de-vente
+
+
+## Professionnels et poseurs
+
+- Offre professionnels : https://isotuiles.fr/pages/pro
+- Espace PRO : https://isotuiles.fr/pages/espace-pro
+- Trouver un poseur près de chez soi : https://isotuiles.fr/pages/trouver-un-poseur
 
 
 ## Aides financières
 
-Isotuiles propose un simulateur MaPrimeRénov' pour les propriétaires souhaitant évaluer leurs droits aux aides de rénovation énergétique (ANAH 2026). Un expert RGE (Reconnu Garant de l'Environnement) peut être sollicité pour :
-- Confirmer l'éligibilité et les montants d'aides
-- Organiser une visite technique gratuite sous 48 h
-- Accompagner l'installation sans avance de frais
-
-Page dédiée : https://isotuiles.fr/pages/ma-prime-renov
+Les travaux d'isolation de toiture peuvent ouvrir droit à des aides à la rénovation énergétique (MaPrimeRénov', primes CEE), sous conditions de ressources et de performance, notamment lorsque la pose est réalisée par un artisan RGE (Reconnu Garant de l'Environnement). Contactez Isotuiles pour être orienté : https://isotuiles.fr/pages/contact
 
 
 ## Guides et conseils techniques
 
 Blog de conseils pratiques : https://isotuiles.fr/blogs/conseils-pratiques
 
-Articles disponibles :
-- Pourcentage de pente de toiture : le guide complet → https://isotuiles.fr/blogs/conseils-pratiques/pourcentage-de-pente-de-toiture
-- De quoi est composé un panneau sandwich ? → https://isotuiles.fr/blogs/conseils-pratiques/de-quoi-est-compose-un-panneau-sandwich
-- Comment faire une finition au faîtage ? → https://isotuiles.fr/blogs/conseils-pratiques/comment-faire-une-finitions-au-faitage
-- Comment poser un Velux sur une toiture en panneaux sandwich
-- Est-il possible d'installer des panneaux solaires sur un toit en panneaux sandwich ?
-- Comment remplacer une toiture en fibrociment/amiante-ciment ?
+Articles :
+- [Prix d'une toiture en panneaux sandwich au m² (2026)](https://isotuiles.fr/blogs/conseils-pratiques/prix-toiture-panneaux-sandwich-m2)
+- [Panneau sandwich ou tuile traditionnelle : que choisir ?](https://isotuiles.fr/blogs/conseils-pratiques/panneau-sandwich-ou-tuile-traditionnelle)
+- [Quelle épaisseur de panneau sandwich choisir ?](https://isotuiles.fr/blogs/conseils-pratiques/quelle-epaisseur-de-panneau-sandwich-choisir)
+- [De quoi est composé un panneau sandwich ?](https://isotuiles.fr/blogs/conseils-pratiques/de-quoi-est-compose-un-panneau-sandwich)
+- [Pourquoi le polyuréthane (PU) surpasse les isolants traditionnels ? (comparatif complet)](https://isotuiles.fr/blogs/conseils-pratiques/pourquoi-le-polyurethane-pu-surpasse-les-isolants-traditionnels-comparatif-complet)
+- [Quels avantages offre l'installation d'un panneau sandwich ?](https://isotuiles.fr/blogs/conseils-pratiques/quels-avantages-offre-l-installation-d-un-panneau-sandwich)
+- [Pente de toiture : le guide complet](https://isotuiles.fr/blogs/conseils-pratiques/pourcentage-de-pente-de-toiture)
+- [Tout savoir sur l'installation et le montage](https://isotuiles.fr/blogs/conseils-pratiques/tout-savoir-sur-linstallation-et-le-montage)
+- [Comment faire une finition au faîtage ?](https://isotuiles.fr/blogs/conseils-pratiques/comment-faire-une-finitions-au-faitage)
+- [Accessoires complémentaires et conseils pour les jonctions sur mesure](https://isotuiles.fr/blogs/conseils-pratiques/finitions-et-raccords-nos-conseils-et-complements-utiles)
+- [Comment poser un Velux sur une toiture en panneaux sandwich](https://isotuiles.fr/blogs/conseils-pratiques/comment-poser-un-velux-sur-une-toiture-en-panneaux-sandwich)
+- [Comment poser des panneaux solaires ?](https://isotuiles.fr/blogs/conseils-pratiques/comment-poser-des-panneaux-solaires)
+- [Panneaux sandwich et condensation : causes, risques et solutions](https://isotuiles.fr/blogs/conseils-pratiques/panneaux-sandwich-et-condensation-causes-risques-et-solutions)
+- [Faut-il déclarer des travaux en mairie pour poser des panneaux sandwich ?](https://isotuiles.fr/blogs/conseils-pratiques/faut-il-declarer-des-travaux-en-mairie-pour-poser-des-panneaux-sandwich)
+- [Envisagez-vous de remplacer une toiture en amiante-ciment ?](https://isotuiles.fr/blogs/conseils-pratiques/envisagez-vous-de-remplacer-une-toiture-en-amiante-ciment)
 
 
 ## Pages importantes
@@ -108,43 +211,87 @@ Articles disponibles :
 |---|---|
 | Accueil | https://isotuiles.fr |
 | Boutique (tous produits) | https://isotuiles.fr/collections/boutiques |
+| Panneaux sandwich isolés pour toiture | https://isotuiles.fr/collections/panneaux-tuiles-isolants |
 | Romane Canal | https://isotuiles.fr/collections/romane-canal |
 | Tuiles Plates | https://isotuiles.fr/collections/tuiles-plates |
 | Bac Acier | https://isotuiles.fr/collections/bac-acier |
+| Bardage | https://isotuiles.fr/collections/bardage |
 | Accessoires | https://isotuiles.fr/collections/accessoires |
-| Estimateur de prix | https://isotuiles.fr/pages/estimateur-de-prix |
+| Devis gratuit en ligne | https://isotuiles.fr/pages/devis-isotuiles |
+| Toiture complète | https://isotuiles.fr/pages/toiture-complete |
+| Remplacement de toiture | https://isotuiles.fr/pages/replacement-toiture |
+| Panneaux sandwich (page info) | https://isotuiles.fr/pages/panneaux-sandwich |
+| Avantages des panneaux sandwich | https://isotuiles.fr/pages/quels-sont-les-avantages-des-panneaux-sandwich |
+| Installation et découpe | https://isotuiles.fr/pages/installation-et-decoupe-des-panneaux-sandwich |
+| Guide de pose | https://isotuiles.fr/pages/guide-de-pose |
+| Finitions | https://isotuiles.fr/pages/finitions |
+| Polyuréthane vs isolants traditionnels | https://isotuiles.fr/pages/pourquoi-le-polyurethane-pu-surpasse-les-isolants-traditionnels-comparatif-complet |
 | Guides & Conseils | https://isotuiles.fr/blogs/conseils-pratiques |
 | FAQ | https://isotuiles.fr/pages/foire-aux-questions |
-| Contact | https://isotuiles.fr/pages/conctactez-nous |
-| MaPrimeRénov' | https://isotuiles.fr/pages/ma-prime-renov |
-| Panneaux sandwich (page info) | https://isotuiles.fr/pages/panneaux-sandwich |
+| Professionnels | https://isotuiles.fr/pages/pro |
+| Trouver un poseur | https://isotuiles.fr/pages/trouver-un-poseur |
+| Suivi de commande | https://isotuiles.fr/pages/suivi-commande |
+| Rendez-vous au dépôt | https://isotuiles.fr/pages/rendez-vous-au-depot |
+| Contact | https://isotuiles.fr/pages/contact |
+| Conditions générales de vente | https://isotuiles.fr/pages/conditions-generales-de-vente |
+| Mentions légales | https://isotuiles.fr/policies/legal-notice |
+| Politique de remboursement | https://isotuiles.fr/policies/refund-policy |
+| Politique de confidentialité | https://isotuiles.fr/policies/privacy-policy |
+| Conditions d'utilisation | https://isotuiles.fr/policies/terms-of-service |
 
 
 ## FAQ
 
-**Quelles longueurs sont disponibles ?**  
-De 2,10 m à 12,25 m en standard (multiples de 35 cm). Jusqu'à 15,75 m sur demande avec transport adapté.
+**Quelles longueurs sont disponibles ?**
+De 2,10 m à 12,25 m par pas de 35 cm en commande en ligne (2,10 / 2,45 / 2,80 / … / 11,90 / 12,25 m). Jusqu'à 14,00 m sur devis.
 
-**Quelle pente minimale est recommandée ?**  
-10 % minimum pour garantir l'évacuation des eaux et l'étanchéité du toit.
+**Quel est le prix d'une toiture en panneaux sandwich ?**
+Romane Canal de 44,50 à 48,50 €/m², Tuiles Plates 54,00 €/m², Bac Acier de 26,00 à 38,90 €/m², hors accessoires et livraison. Les prix sont dégressifs selon la quantité. Détail : https://isotuiles.fr/blogs/conseils-pratiques/prix-toiture-panneaux-sandwich-m2
 
-**Comment est déterminé le prix au mètre carré ?**  
-Le tarif varie selon le modèle, l'épaisseur, les finitions et la quantité commandée. Les prix sont dégressifs par volume.
+**Comment est déterminé le prix au mètre carré ?**
+Le tarif varie selon le modèle, l'épaisseur, la couleur, les finitions et la quantité commandée. Un devis gratuit est disponible sur https://isotuiles.fr/pages/devis-isotuiles
 
-**Quel entraxe entre les pannes ?**  
-2,00 m à 2,50 m conseillé. Réduire l'entraxe ou ajouter des supports intermédiaires pour les portées supérieures.
+**Quels sont les délais de fabrication ?**
+5 à 6 semaines pour la Romane Canal, 6 à 8 semaines pour les Tuiles Plates, 5 à 8 semaines pour le Bac Acier. Un délai plus court peut être proposé au-delà de 300 m².
 
-**Peut-on poser les panneaux soi-même ?**  
-Oui, la pose est accessible à un bricoleur averti. Un guide de pose détaillé est disponible sur le site. Pour les configurations complexes, un artisan ou charpentier est recommandé.
+**Quelle épaisseur choisir ?**
+Plus l'isolant est épais, meilleure est l'isolation : en Romane Canal, R = 2,73 m².K/W en 40/80 mm et R = 3,64 m².K/W en 60/105 mm ; en Tuiles Plates, R = 3,12 m².K/W en 50/77 mm. Guide : https://isotuiles.fr/blogs/conseils-pratiques/quelle-epaisseur-de-panneau-sandwich-choisir
 
-**Les panneaux sont-ils compatibles avec des fenêtres de toit (Velux) ?**  
+**Quelle pente minimale est recommandée ?**
+10 % minimum (environ 6°) pour garantir l'évacuation des eaux et l'étanchéité du toit.
+
+**Quel entraxe entre les pannes ?**
+2,00 m à 2,50 m conseillé. La charge admissible baisse quand l'entraxe augmente (Romane Canal 40/80 : 185 kg/m² à 2,00 m, 105 kg/m² à 2,50 m). En zone de neige ou de vent fort, réduire l'entraxe ou ajouter des pannes intermédiaires.
+
+**Peut-on poser les panneaux soi-même ?**
+Oui, la pose est accessible à un bricoleur averti. Un guide de pose détaillé est disponible sur https://isotuiles.fr/pages/guide-de-pose. Pour les configurations complexes, un artisan ou charpentier est recommandé : https://isotuiles.fr/pages/trouver-un-poseur
+
+**Comment fixer correctement les panneaux ?**
+Vis autoperceuses étanches à tête colorée posées sur la partie haute des ondes, sur chaque panne : 125 mm pour les panneaux 40/80, 150 mm pour les 60/105, en version bois ou acier selon la charpente. Fixer chaque emboîtement mâle/femelle et répartir les vis de façon homogène (jusqu'à 6 vis/m²) sans serrer excessivement.
+
+**Les panneaux sont-ils compatibles avec des fenêtres de toit (Velux) ?**
 Oui. Un chevêtre doit être prévu dans la charpente. La découpe dans le panneau est ensuite réalisée et étanchée avec le kit du fabricant de fenêtre.
 
-**Quelle est la finition intérieure des panneaux ?**  
+**Quelle est la finition intérieure des panneaux ?**
 Blanc laqué par défaut avec légère nervure. Personnalisation possible (bois clair, bois foncé, autres coloris) pour les commandes importantes.
 
-**Comment fixer correctement les panneaux ?**  
-Vis auto-perceuses posées sur la partie haute des ondes. Fixer chaque emboîtement mâle/femelle. Répartir les vis de façon homogène. Utiliser des capuchons de finition.
+**Les panneaux sandwich sont-ils efficaces thermiquement ?**
+Oui. La toiture représente jusqu'à 30 % des pertes de chaleur d'un bâtiment. L'âme polyuréthane (λ = 0,022 W/m.K) assure une isolation continue : R = 2,73 m².K/W en Romane Canal 40/80, 3,64 en 60/105 et 3,12 en Tuiles Plates 50/77.
 
-**Les panneaux sandwich sont-ils efficaces thermiquement ?**  
-Oui. La toiture représente jusqu'à 30 % des pertes de chaleur d'un bâtiment. L'âme polyuréthane rigide des panneaux Isotuiles assure une isolation continue et réduit les ponts thermiques.
+**Quel est le classement au feu des panneaux ?**
+B-s2,d0 (Euroclasse).
+
+**Comment découper un panneau sandwich ?**
+À la scie sauteuse ou à la scie circulaire équipée d'une lame métal à dents fines. Éviter la disqueuse à disque abrasif, qui brûle le prélaquage. Retirer la limaille juste après la coupe pour éviter les points de rouille.
+
+**Quel débord prévoir en bas de toiture ?**
+20 à 35 cm de débord en bas de pente pour éloigner l'eau des murs ; les rives latérales débordent de 5 à 10 cm.
+
+**Faut-il une autorisation pour changer sa toiture ?**
+Une déclaration préalable de travaux en mairie est généralement nécessaire dès que l'aspect extérieur change. Détails : https://isotuiles.fr/blogs/conseils-pratiques/faut-il-declarer-des-travaux-en-mairie-pour-poser-des-panneaux-sandwich
+
+**Peut-on remplacer une toiture en fibrociment ou amiante-ciment ?**
+Oui, les panneaux sandwich sont une solution courante de remplacement ; le retrait de l'amiante doit être confié à une entreprise certifiée. Détails : https://isotuiles.fr/blogs/conseils-pratiques/envisagez-vous-de-remplacer-une-toiture-en-amiante-ciment
+
+**Les panneaux sandwich font-ils de la condensation ?**
+L'isolant continu limite fortement la condensation intérieure ; une bonne ventilation du local reste recommandée. Détails : https://isotuiles.fr/blogs/conseils-pratiques/panneaux-sandwich-et-condensation-causes-risques-et-solutions
