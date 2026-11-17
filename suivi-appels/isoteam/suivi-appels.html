@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suivi des appels</title>
+<style>
+  :root {
+    --bg: #f4f6fa; --carte: #ffffff; --texte: #1d2433; --doux: #5b6475; --bord: #dde3ee;
+    --marine: #1F3864; --rouge: #c0392b; --rouge-fond: #fbe4e6; --orange: #b9770e; --orange-fond: #fff1d6;
+    --vert: #1e6b34; --vert-fond: #dff3e4;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--texte); }
+  header { background: var(--marine); color: #fff; padding: 14px 16px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  header h1 { font-size: 18px; margin: 0; flex: 1 1 auto; }
+  header input, header select { padding: 8px 10px; border-radius: 6px; border: 0; font-size: 14px; }
+  header button { padding: 8px 12px; border-radius: 6px; border: 1px solid #fff; background: transparent; color: #fff; cursor: pointer; }
+  .compteurs { display: flex; flex-wrap: wrap; gap: 10px; padding: 12px 16px; }
+  .compteur { background: var(--carte); border: 1px solid var(--bord); border-radius: 8px; padding: 10px 14px; min-width: 150px; }
+  .compteur b { display: block; font-size: 22px; }
+  .compteur.alerte b { color: var(--rouge); }
+  .bandeau { margin: 0 16px 8px; padding: 10px 12px; border-radius: 8px; background: var(--orange-fond); color: #6b4a07; font-size: 13px; }
+  .tableau { display: flex; gap: 12px; padding: 4px 16px 24px; overflow-x: auto; align-items: flex-start; }
+  .colonne { flex: 0 0 280px; background: #e9edf4; border-radius: 10px; padding: 8px; min-height: 120px; }
+  .colonne h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .03em; margin: 4px 6px 8px; color: var(--marine); display: flex; justify-content: space-between; }
+  .colonne.survol { outline: 2px dashed var(--marine); }
+  .carte { background: var(--carte); border: 1px solid var(--bord); border-left: 4px solid var(--marine); border-radius: 8px; padding: 10px; margin-bottom: 8px; cursor: grab; font-size: 13px; }
+  .carte.retard { border-left-color: var(--rouge); background: var(--rouge-fond); }
+  .carte.aujourdhui { border-left-color: var(--orange); background: var(--orange-fond); }
+  .carte .haut { display: flex; justify-content: space-between; gap: 6px; }
+  .carte .nom { font-weight: bold; font-size: 14px; }
+  .carte .id { color: var(--doux); font-size: 11px; }
+  .carte a.tel { display: inline-block; margin: 4px 0; color: var(--marine); font-weight: bold; text-decoration: none; }
+  .badge { display: inline-block; font-size: 11px; padding: 2px 6px; border-radius: 10px; background: #e3e8f2; color: var(--marine); margin-right: 4px; }
+  .badge.haute { background: var(--rouge-fond); color: var(--rouge); }
+  .demande { color: var(--texte); margin: 6px 0; }
+  .meta { color: var(--doux); font-size: 12px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .actions button { flex: 1 1 auto; font-size: 12px; padding: 6px; border-radius: 6px; border: 1px solid var(--bord); background: #fff; cursor: pointer; }
+  .actions button.principal { background: var(--marine); color: #fff; border-color: var(--marine); }
+  dialog { border: 0; border-radius: 10px; padding: 18px; width: min(460px, 92vw); }
+  dialog label { display: block; font-size: 12px; font-weight: bold; margin: 10px 0 4px; }
+  dialog input, dialog select, dialog textarea { width: 100%; padding: 8px; font-size: 14px; border: 1px solid var(--bord); border-radius: 6px; }
+  dialog textarea { min-height: 70px; }
+  dialog .boutons { display: flex; justify-content: flex-end; gap: 8px; margin-top: 14px; }
+  dialog .boutons button { padding: 8px 14px; border-radius: 6px; border: 1px solid var(--bord); background: #fff; cursor: pointer; }
+  dialog .boutons button.principal { background: var(--marine); color: #fff; border-color: var(--marine); }
+  .historique { white-space: pre-wrap; background: var(--bg); padding: 8px; border-radius: 6px; font-size: 12px; max-height: 120px; overflow: auto; }
+  .toast { position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); background: var(--texte); color: #fff; padding: 10px 16px; border-radius: 8px; font-size: 14px; display: none; }
+  @media (max-width: 640px) { .colonne { flex-basis: 85vw; } header h1 { flex-basis: 100%; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Suivi des appels clients</h1>
+  <input id="recherche" type="search" placeholder="Nom, téléphone, demande…">
+  <select id="filtreMotif"><option value="">Tous les motifs</option></select>
+  <label style="font-size:13px"><input type="checkbox" id="voirClos"> Voir les dossiers clos</label>
+  <button id="btnNouveau">+ Nouvel appel</button>
+  <button id="btnActualiser">Actualiser</button>
+</header>
+
+<div class="compteurs" id="compteurs"></div>
+<div class="bandeau" id="bandeau" hidden></div>
+<div class="tableau" id="tableau"></div>
+
+<dialog id="fiche">
+  <form method="dialog" id="formFiche">
+    <h3 id="ficheTitre" style="margin:0 0 6px">Dossier</h3>
+    <label>Téléphone</label><input name="tel" required>
+    <label>Nom / Société</label><input name="nom">
+    <label>Email</label><input name="email" type="email">
+    <label>Ville / adresse chantier</label><input name="ville">
+    <label>Motif</label><select name="motif"></select>
+    <label>Demande</label><textarea name="demande"></textarea>
+    <label>Étape</label><select name="etape"></select>
+    <label>Rappeler le (laisser vide pour aucun rappel)</label><input name="dateRappel" type="datetime-local">
+    <label>Réf. devis / commande</label><input name="ref">
+    <label>Ajouter une note</label><textarea name="note" placeholder="Ce qui s'est dit pendant l'appel"></textarea>
+    <div id="ficheHisto"></div>
+    <div class="boutons">
+      <button value="annuler" formnovalidate>Annuler</button>
+      <button value="ok" class="principal">Enregistrer</button>
+    </div>
+  </form>
+</dialog>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===================== CONFIGURATION =====================
+ * URL_API : l'adresse de l'application web Apps Script (se termine par /exec)
+ * CLE     : la "Clé d'accès ERP" saisie dans l'onglet Listes du Google Sheets
+ * Tant que URL_API est vide, la page affiche des données de démonstration.
+ */
+const URL_API = '';
+const CLE = '';
+/* ======================================================== */
+
+const ETAPES_CLOSES = ['Terminé', 'Sans suite'];
+let listes = { motifs: [], etapes: [], priorites: [] };
+let dossiers = [];
+let ficheCourante = null;
+
+const $ = (s) => document.querySelector(s);
+const demo = !URL_API;
+
+function toast(t) {
+  const el = $('#toast'); el.textContent = t; el.style.display = 'block';
+  clearTimeout(toast.t); toast.t = setTimeout(() => el.style.display = 'none', 3000);
+}
+
+async function api(corps) {
+  if (demo) return actionDemo(corps);
+  const r = await fetch(URL_API, { method: 'POST', body: JSON.stringify(Object.assign({ cle: CLE }, corps)) });
+  const j = await r.json();
+  if (!j.ok) throw new Error(j.erreur || 'Erreur');
+  return j;
+}
+
+async function charger() {
+  try {
+    if (demo) {
+      ({ listes, dossiers } = donneesDemo());
+      $('#bandeau').hidden = false;
+      $('#bandeau').textContent = 'Mode démonstration : renseignez URL_API et CLE en haut du fichier pour afficher vos vrais appels.';
+    } else {
+      const r = await fetch(URL_API + '?action=liste&cle=' + encodeURIComponent(CLE));
+      const j = await r.json();
+      if (!j.ok) throw new Error(j.erreur);
+      listes = j.listes; dossiers = j.dossiers;
+    }
+    remplirSelects(); afficher();
+  } catch (e) { toast('Chargement impossible : ' + e.message); }
+}
+
+function remplirSelects() {
+  const fm = $('#filtreMotif'); const val = fm.value;
+  fm.innerHTML = '<option value="">Tous les motifs</option>' + listes.motifs.map(m => `<option>${esc(m)}</option>`).join('');
+  fm.value = val;
+  $('#formFiche [name=motif]').innerHTML = '<option value=""></option>' + listes.motifs.map(m => `<option>${esc(m)}</option>`).join('');
+  $('#formFiche [name=etape]').innerHTML = listes.etapes.map(m => `<option>${esc(m)}</option>`).join('');
+}
+
+function esc(s) { return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
+function fmtDate(iso) {
+  if (!iso) return '';
+  return new Date(iso).toLocaleString('fr-FR', { weekday: 'short', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
+}
+function urgence(d) {
+  if (d.rappel !== 'Oui' || !d.dateRappel || ETAPES_CLOSES.includes(d.etape)) return '';
+  const t = new Date(d.dateRappel), now = new Date(), fin = new Date(); fin.setHours(23, 59, 59);
+  if (t < now) return 'retard';
+  if (t <= fin) return 'aujourdhui';
+  return '';
+}
+
+function afficher() {
+  const q = $('#recherche').value.toLowerCase().trim();
+  const motif = $('#filtreMotif').value;
+  const voirClos = $('#voirClos').checked;
+  const visibles = dossiers.filter(d =>
+    (!motif || d.motif === motif) &&
+    (!q || [d.nom, d.tel, d.demande, d.ville, d.email, d.id, d.ref].join(' ').toLowerCase().includes(q)));
+
+  const ouverts = dossiers.filter(d => !ETAPES_CLOSES.includes(d.etape));
+  const retard = ouverts.filter(d => urgence(d) === 'retard').length;
+  const auj = ouverts.filter(d => urgence(d) === 'aujourdhui').length;
+  const semaine = dossiers.filter(d => d.date && new Date(d.date) > Date.now() - 7 * 864e5).length;
+  $('#compteurs').innerHTML = `
+    <div class="compteur alerte"><b>${retard}</b>rappels en retard</div>
+    <div class="compteur"><b>${auj}</b>rappels prévus aujourd'hui</div>
+    <div class="compteur"><b>${ouverts.length}</b>dossiers ouverts</div>
+    <div class="compteur"><b>${semaine}</b>appels sur 7 jours</div>`;
+
+  const etapes = listes.etapes.filter(e => voirClos || !ETAPES_CLOSES.includes(e));
+  $('#tableau').innerHTML = etapes.map(e => {
+    const cartes = visibles.filter(d => d.etape === e).sort((a, b) =>
+      (a.dateRappel ? new Date(a.dateRappel) : 9e15) - (b.dateRappel ? new Date(b.dateRappel) : 9e15));
+    return `<section class="colonne" data-etape="${esc(e)}">
+      <h2><span>${esc(e)}</span><span>${cartes.length}</span></h2>
+      ${cartes.map(carte).join('')}
+    </section>`;
+  }).join('');
+  brancherGlisser();
+}
+
+function carte(d) {
+  const u = urgence(d);
+  const telBrut = String(d.tel).replace(/\s/g, '');
+  const rappel = d.rappel === 'Oui' && d.dateRappel
+    ? `<div class="meta">${u === 'retard' ? '⚠ En retard : ' : 'Rappel : '}${fmtDate(d.dateRappel)}</div>` : '';
+  return `<article class="carte ${u}" draggable="true" data-id="${esc(d.id)}">
+    <div class="haut"><span class="nom">${esc(d.nom || 'Inconnu')}</span><span class="id">${esc(d.id)}</span></div>
+    <a class="tel" href="tel:${esc(telBrut)}">${esc(d.tel)}</a>
+    <div>${d.motif ? `<span class="badge">${esc(d.motif)}</span>` : ''}${d.priorite === 'Haute' ? '<span class="badge haute">Priorité haute</span>' : ''}${d.appelsMemeNumero > 1 ? `<span class="badge">${d.appelsMemeNumero} dossiers</span>` : ''}</div>
+    ${d.demande ? `<div class="demande">${esc(d.demande)}</div>` : ''}
+    ${rappel}
+    <div class="meta">Appel du ${fmtDate(d.date)}${d.tentatives ? ' · ' + d.tentatives + ' tentative(s)' : ''}</div>
+    <div class="actions">
+      <button class="principal" data-act="rappele">Rappelé</button>
+      <button data-act="reporter">Demain</button>
+      <button data-act="ouvrir">Fiche</button>
+    </div>
+  </article>`;
+}
+
+function brancherGlisser() {
+  document.querySelectorAll('.carte').forEach(c => {
+    c.addEventListener('dragstart', ev => ev.dataTransfer.setData('text/plain', c.dataset.id));
+  });
+  document.querySelectorAll('.colonne').forEach(col => {
+    col.addEventListener('dragover', ev => { ev.preventDefault(); col.classList.add('survol'); });
+    col.addEventListener('dragleave', () => col.classList.remove('survol'));
+    col.addEventListener('drop', async ev => {
+      ev.preventDefault(); col.classList.remove('survol');
+      const id = ev.dataTransfer.getData('text/plain');
+      const d = dossiers.find(x => x.id === id);
+      if (!d || d.etape === col.dataset.etape) return;
+      await majDossier(id, { etape: col.dataset.etape }, null, 'Étape : ' + col.dataset.etape);
+    });
+  });
+}
+
+async function majDossier(id, changes, sousAction, message) {
+  try {
+    await api({ action: 'maj', id, changes, sousAction });
+    toast(message || 'Enregistré');
+    await charger();
+  } catch (e) { toast('Erreur : ' + e.message); }
+}
+
+$('#tableau').addEventListener('click', async ev => {
+  const b = ev.target.closest('button'); if (!b) return;
+  const id = b.closest('.carte').dataset.id;
+  if (b.dataset.act === 'rappele') return ouvrirFiche(id, true);
+  if (b.dataset.act === 'reporter') return majDossier(id, {}, 'reporter', 'Rappel reporté au prochain jour ouvré');
+  if (b.dataset.act === 'ouvrir') return ouvrirFiche(id, false);
+});
+
+function versLocal(iso) {
+  if (!iso) return '';
+  const d = new Date(iso); d.setMinutes(d.getMinutes() - d.getTimezoneOffset());
+  return d.toISOString().slice(0, 16);
+}
+
+function ouvrirFiche(id, apresAppel) {
+  const f = $('#formFiche');
+  const d = id ? dossiers.find(x => x.id === id) : null;
+  ficheCourante = { id, apresAppel };
+  $('#ficheTitre').textContent = d ? `${d.id} · ${d.nom || d.tel}` + (apresAppel ? ' · compte rendu d\'appel' : '') : 'Nouvel appel';
+  f.tel.value = d ? d.tel : ''; f.tel.readOnly = !!d;
+  f.nom.value = d?.nom || ''; f.email.value = d?.email || ''; f.ville.value = d?.ville || '';
+  f.motif.value = d?.motif || ''; f.demande.value = d?.demande || ''; f.ref.value = d?.ref || '';
+  f.etape.value = d ? (apresAppel ? 'Rappelé, attente client' : d.etape) : 'À rappeler';
+  f.dateRappel.value = d && !apresAppel && d.rappel === 'Oui' ? versLocal(d.dateRappel) : '';
+  f.note.value = '';
+  $('#ficheHisto').innerHTML = d?.notes ? `<label>Historique</label><div class="historique">${esc(d.notes)}</div>` : '';
+  $('#fiche').showModal();
+}
+
+$('#fiche').addEventListener('close', async () => {
+  if ($('#fiche').returnValue !== 'ok') return;
+  const f = $('#formFiche');
+  const dateRappel = f.dateRappel.value ? new Date(f.dateRappel.value).toISOString() : '';
+  const horo = new Date().toLocaleString('fr-FR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
+  if (!ficheCourante.id) {
+    try {
+      const r = await api({ action: 'ajouter', tel: f.tel.value, nom: f.nom.value, email: f.email.value, ville: f.ville.value,
+        motif: f.motif.value, demande: f.demande.value, dateRappel, rappel: 'Oui', notes: f.note.value, source: 'Saisie manuelle' });
+      toast(r.misAJour ? `Dossier ${r.id} existant mis à jour` : `Dossier ${r.id} créé`);
+      await charger();
+    } catch (e) { toast('Erreur : ' + e.message); }
+    return;
+  }
+  const changes = { nom: f.nom.value, email: f.email.value, ville: f.ville.value, motif: f.motif.value,
+    demande: f.demande.value, etape: f.etape.value, ref: f.ref.value,
+    rappel: dateRappel ? 'Oui' : 'Non', dateRappel };
+  if (f.note.value.trim()) changes.notes = horo + ' : ' + f.note.value.trim();
+  await majDossier(ficheCourante.id, changes, ficheCourante.apresAppel ? 'rappele' : null);
+});
+
+$('#btnNouveau').addEventListener('click', () => ouvrirFiche(null, false));
+$('#btnActualiser').addEventListener('click', charger);
+$('#recherche').addEventListener('input', afficher);
+$('#filtreMotif').addEventListener('change', afficher);
+$('#voirClos').addEventListener('change', afficher);
+setInterval(() => { if (!document.querySelector('dialog[open]')) charger(); }, 120000);
+
+/* ---------- Données de démonstration ---------- */
+function donneesDemo() {
+  if (donneesDemo.cache) return donneesDemo.cache;
+  const h = (jours, heure) => { const d = new Date(); d.setDate(d.getDate() + jours); d.setHours(heure, 0, 0, 0); return d.toISOString(); };
+  donneesDemo.cache = {
+    listes: {
+      motifs: ['Devis', 'Info commande', 'Question technique', 'SAV / réclamation', 'Livraison / chantier', 'Autre'],
+      etapes: ['Nouveau', 'À rappeler', 'Rappelé, attente client', 'Devis à faire', 'Devis envoyé', 'Commande en cours', 'Terminé', 'Sans suite'],
+      priorites: ['Haute', 'Normale', 'Basse']
+    },
+    dossiers: [
+      { id: 'A-0001', date: h(-1, 17), tel: '06 11 22 33 44', nom: '', motif: '', demande: '', etape: 'Nouveau', rappel: 'Oui', dateRappel: h(0, 9), priorite: 'Normale', tentatives: 0, notes: '', appelsMemeNumero: 1 },
+      { id: 'A-0002', date: h(-2, 10), tel: '06 55 44 33 22', nom: 'Démo : client A', motif: 'Devis', demande: 'Isolation toiture 80 m²', etape: 'À rappeler', rappel: 'Oui', dateRappel: h(-1, 10), priorite: 'Haute', tentatives: 1, notes: 'Messagerie, rappeler le matin', appelsMemeNumero: 2 },
+      { id: 'A-0003', date: h(-3, 14), tel: '07 12 12 12 12', nom: 'Démo : société B', motif: 'Info commande', demande: 'Date de livraison des panneaux', etape: 'Rappelé, attente client', rappel: 'Non', dateRappel: '', priorite: 'Normale', tentatives: 1, notes: '', appelsMemeNumero: 1 },
+      { id: 'A-0004', date: h(-4, 9), tel: '06 98 76 54 32', nom: 'Démo : client C', motif: 'Devis', demande: 'Rénovation combles 120 m²', etape: 'Devis à faire', rappel: 'Oui', dateRappel: h(1, 9), priorite: 'Normale', tentatives: 0, notes: '', appelsMemeNumero: 1 },
+      { id: 'A-0005', date: h(-6, 11), tel: '04 78 00 00 00', nom: 'Démo : client D', motif: 'SAV / réclamation', demande: 'Tuile abîmée à la livraison', etape: 'Commande en cours', rappel: 'Oui', dateRappel: h(0, 23), priorite: 'Haute', tentatives: 2, notes: '', appelsMemeNumero: 1 }
+    ]
+  };
+  return donneesDemo.cache;
+}
+function actionDemo(c) {
+  const data = donneesDemo();
+  if (c.action === 'maj') {
+    const d = data.dossiers.find(x => x.id === c.id);
+    const ch = Object.assign({}, c.changes);
+    if (c.sousAction === 'rappele') { d.tentatives++; ch.etape = ch.etape || 'Rappelé, attente client'; }
+    if (c.sousAction === 'reporter') { const t = new Date(); t.setDate(t.getDate() + 1); t.setHours(9, 0, 0, 0); ch.dateRappel = t.toISOString(); ch.rappel = 'Oui'; d.tentatives++; }
+    if (ch.notes) ch.notes = d.notes ? d.notes + '\n' + ch.notes : ch.notes;
+    Object.assign(d, ch);
+    if (ETAPES_CLOSES.includes(d.etape)) d.rappel = 'Non';
+    return { ok: true, id: d.id };
+  }
+  if (c.action === 'ajouter') {
+    const id = 'A-' + String(data.dossiers.length + 1).padStart(4, '0');
+    data.dossiers.push({ id, date: new Date().toISOString(), tel: c.tel, nom: c.nom, email: c.email, ville: c.ville, motif: c.motif,
+      demande: c.demande, etape: 'À rappeler', rappel: 'Oui', dateRappel: c.dateRappel || new Date(Date.now() + 864e5).toISOString(),
+      priorite: 'Normale', tentatives: 0, notes: c.notes, appelsMemeNumero: 1 });
+    return { ok: true, id };
+  }
+}
+
+charger();
+</script>
+</body>
+</html>

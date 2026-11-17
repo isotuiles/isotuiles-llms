@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 16px; background: #f4f6fa; color: #1d2433; }
+    h1 { font-size: 20px; margin: 0 0 12px; color: #1F3864; }
+    label { display: block; font-size: 13px; font-weight: bold; margin: 12px 0 4px; }
+    input, select, textarea { width: 100%; padding: 11px; font-size: 16px; border: 1px solid #c7cfdd; border-radius: 8px; background: #fff; }
+    textarea { min-height: 80px; resize: vertical; }
+    .motifs { display: flex; flex-wrap: wrap; gap: 8px; }
+    .motifs button { flex: 1 1 45%; padding: 12px 8px; font-size: 14px; border: 1px solid #1F3864; background: #fff; color: #1F3864; border-radius: 8px; }
+    .motifs button.actif { background: #1F3864; color: #fff; }
+    .ligne { display: flex; gap: 8px; }
+    .ligne > div { flex: 1; }
+    .envoyer { margin-top: 18px; width: 100%; padding: 14px; font-size: 17px; font-weight: bold; color: #fff; background: #1F3864; border: 0; border-radius: 8px; }
+    .envoyer:disabled { opacity: .5; }
+    .message { margin-top: 14px; padding: 12px; border-radius: 8px; display: none; }
+    .ok { background: #dff3e4; color: #1e6b34; display: block; }
+    .erreur { background: #f8d7da; color: #8a1c25; display: block; }
+    .aide { font-size: 12px; color: #5b6475; margin-top: 4px; }
+    details { margin-top: 12px; }
+    summary { font-size: 14px; color: #1F3864; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Nouvel appel</h1>
+  <form id="f" autocomplete="off">
+    <label for="tel">Téléphone</label>
+    <input id="tel" name="tel" type="tel" inputmode="tel" required placeholder="06 12 34 56 78">
+
+    <label>Motif</label>
+    <div class="motifs" id="motifs">
+      <? for (var i = 0; i < listes.motifs.length; i++) { ?>
+        <button type="button" data-v="<?= listes.motifs[i] ?>"><?= listes.motifs[i] ?></button>
+      <? } ?>
+    </div>
+
+    <label for="nom">Nom / Société</label>
+    <input id="nom" name="nom" placeholder="Laisser vide si inconnu">
+
+    <label for="demande">Demande</label>
+    <textarea id="demande" name="demande" placeholder="Ex : devis isolation combles 60 m²"></textarea>
+
+    <div class="ligne">
+      <div>
+        <label for="priorite">Priorité</label>
+        <select id="priorite" name="priorite">
+          <? for (var j = 0; j < listes.priorites.length; j++) { ?>
+            <option <?= listes.priorites[j] === 'Normale' ? 'selected' : '' ?>><?= listes.priorites[j] ?></option>
+          <? } ?>
+        </select>
+      </div>
+      <div>
+        <label for="rappel">Rappel nécessaire</label>
+        <select id="rappel" name="rappel"><option>Oui</option><option>Non</option></select>
+      </div>
+    </div>
+
+    <label for="dateRappel">Rappeler le</label>
+    <input id="dateRappel" name="dateRappel" type="datetime-local">
+    <div class="aide">Laisser vide : créneau automatique (le délai est réglé dans l'onglet Listes).</div>
+
+    <details>
+      <summary>Plus d'informations</summary>
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" inputmode="email">
+      <label for="ville">Ville / adresse chantier</label>
+      <input id="ville" name="ville">
+      <label for="notes">Notes</label>
+      <textarea id="notes" name="notes"></textarea>
+    </details>
+
+    <button class="envoyer" id="btn" type="submit">Enregistrer</button>
+    <div class="message" id="msg"></div>
+  </form>
+
+  <script>
+    var motif = '';
+    document.getElementById('motifs').addEventListener('click', function (e) {
+      if (e.target.tagName !== 'BUTTON') return;
+      motif = e.target.getAttribute('data-v');
+      Array.prototype.forEach.call(this.children, function (b) { b.classList.toggle('actif', b === e.target); });
+    });
+
+    document.getElementById('f').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = document.getElementById('btn');
+      var msg = document.getElementById('msg');
+      var data = {};
+      ['tel', 'nom', 'demande', 'priorite', 'rappel', 'dateRappel', 'email', 'ville', 'notes'].forEach(function (k) {
+        data[k] = document.getElementById(k).value.trim();
+      });
+      if (data.dateRappel) data.dateRappel = new Date(data.dateRappel).toISOString();
+      data.motif = motif;
+      data.source = 'Saisie manuelle';
+      btn.disabled = true;
+      msg.className = 'message';
+      google.script.run
+        .withSuccessHandler(function (r) {
+          btn.disabled = false;
+          msg.textContent = r.misAJour
+            ? 'Dossier ' + r.id + ' existant mis à jour (ce numéro avait déjà un dossier ouvert).'
+            : 'Dossier ' + r.id + ' créé, rappel ajouté à l\'agenda.';
+          msg.className = 'message ok';
+          document.getElementById('f').reset();
+          motif = '';
+          Array.prototype.forEach.call(document.getElementById('motifs').children, function (b) { b.classList.remove('actif'); });
+        })
+        .withFailureHandler(function (err) {
+          btn.disabled = false;
+          msg.textContent = 'Erreur : ' + (err && err.message ? err.message : err);
+          msg.className = 'message erreur';
+        })
+        .ajouterDepuisFormulaire(data);
+    });
+  </script>
+</body>
+</html>
